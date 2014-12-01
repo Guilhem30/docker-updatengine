@@ -24,8 +24,9 @@ else
 	./manage.py migrate
 	./manage.py loaddata initial_data/configuration_initial_data.yaml
 	./manage.py loaddata initial_data/groups_initial_data.yaml
-	chown -R www-data:www-data /var/www/UE-environment/updatengine-server/updatengine/static/
-	chown -R www-data:www-data /var/www/UE-environment/updatengine-server/updatengine/media/
+	chown -R www-data:www-data updatengine/static/
+	chown -R www-data:www-data updatengine/media/
+	patch -p1 /usr/local/lib/python2.7/dist-packages/django/forms/models.py requirements/patchs/patch-django_1.6.2_17118.patch
 	echo "ADMIN_PASS=$ADMIN_PASS"
 fi
 
