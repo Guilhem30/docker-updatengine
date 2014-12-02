@@ -15,7 +15,11 @@ else
 	sed -i "s/^env_path/#env_path/g"  updatengine/wsgi.py
 	sed -i "s/^activate_this/#activate_this/g"  updatengine/wsgi.py
 	sed -i "s/^execfile/#execfile/g"  updatengine/wsgi.py
-	sed "s/##updatengine_server_ip##/$SERVER_IP/g"  updatengine/settings.py.model_sqlite > updatengine/settings.py
+	sed "s/##updatengine_server_ip##/$SERVER_IP/g"  updatengine/settings.py.model_mysql > updatengine/settings.py
+	sed -i "s/##database_name##/$DATABASE_NAME/g"  updatengine/settings.py
+	sed -i "s/##database_user_name##/$DATABASE_USER/g"  updatengine/settings.py
+	sed -i "s/##database_user_password##/$DATABASE_PASSWORD/g"  updatengine/settings.py
+	sed -i "s/# 'HOST': '',/ 'HOST': 'mysql-container', /g"  updatengine/settings.py
 
 
 
