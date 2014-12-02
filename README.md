@@ -21,7 +21,7 @@ Restart the container with docker restart
 You need to set the right parameters / env variables
 
     docker run --name updatengine -d -p 1979:1979 --link mydb:mysql-container \
-    -e "DATABASE_USER=updatengineuser" -e "DATABASE_PASSWORD=password" guilhem30/updatengine
+    -e "DATABASE_USER=updatengineuser" -e "DATABASE_PASSWORD=password" -e "SERVER_IP=192.168.0.100" guilhem30/updatengine
 
 The admin password is visible in 'docker logs updatengine'
 
