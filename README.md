@@ -1,4 +1,4 @@
-# docker-Updatengine
+# docker-updatengine
 
 
 A docker image with Updatengine using MySQL / mariadb
@@ -18,7 +18,7 @@ Then enter the database container with docker exec, ssh or another tool and prep
     
 Restart the container with docker restart
 
-## Run updatengine
+## Run Updatengine
 You need to set the right parameters / env variables
 
     docker run --name updatengine -d -p 1979:1979 --link mydb:mysql-container \
